@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INAI Solutions — Inteligência Artificial para Gestão Pública</title>
+    <meta name="description" content="Soluções de IA para transformar a gestão pública brasileira. Licitações inteligentes, simuladores de governo e análise de dados." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+      :root {
+        --ink: #0a0a0f;
+        --ink-soft: #1a1a24;
+        --paper: #f5f1eb;
+        --gold: #c9a84c;
+        --gold-light: #e8d5a0;
+        --gold-dim: rgba(201,168,76,0.12);
+        --text-inv-muted: rgba(245,241,235,0.65);
+        --text-inv-dim: rgba(245,241,235,0.35);
+        --text-muted: #6b6b7a;
+        --rule: rgba(10,10,15,0.12);
+        --ff-serif: 'Playfair Display', Georgia, serif;
+        --ff-sans: 'DM Sans', system-ui, sans-serif;
+        --ff-mono: 'DM Mono', monospace;
+      }
+
+      html { font-size: 16px; }
+
+      body {
+        font-family: var(--ff-sans);
+        background: var(--ink);
+        color: var(--paper);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 10%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 80% 60% at 20% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
+          radial-gradient(ellipse 60% 50% at 80% 60%, rgba(201,168,76,0.04) 0%, transparent 70%),
+          repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px),
+          repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px);
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        max-width: 800px;
+      }
+
+      .eyebrow {
+        font-family: var(--ff-mono);
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 32px;
+      }
+
+      .hero-title {
+        font-family: var(--ff-serif);
+        font-size: clamp(48px, 7vw, 88px);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+        margin-bottom: 32px;
+      }
+
+      .hero-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        font-weight: 300;
+        color: var(--text-inv-muted);
+        max-width: 580px;
+        line-height: 1.7;
+        margin-bottom: 48px;
+      }
+
+      .stamp {
+        position: absolute;
+        top: 60px;
+        right: 10%;
+        font-family: var(--ff-mono);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--text-inv-dim);
+        text-align: right;
+        line-height: 1.8;
+        text-transform: uppercase;
+      }
+
+      /* ── Products Grid ── */
+      .products {
+        padding: 100px 10%;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      .section-label {
+        font-family: var(--ff-mono);
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        font-family: var(--ff-serif);
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-bottom: 60px;
+        max-width: 500px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 32px;
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        padding: 40px 36px;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        border-color: var(--gold);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        transform: translateY(-2px);
+      }
+
+      .card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .card-icon {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .card-tag {
+        font-family: var(--ff-mono);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 12px;
+      }
+
+      .card-title {
+        font-family: var(--ff-serif);
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .card-desc {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.65;
+        flex: 1;
+        margin-bottom: 24px;
+      }
+
+      .card-link {
+        font-family: var(--ff-mono);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .card-link::after {
+        content: '\2192';
+        transition: transform 0.2s ease;
+      }
+
+      .card:hover .card-link::after {
+        transform: translateX(4px);
+      }
+
+      .card-badge {
+        display: inline-block;
+        font-family: var(--ff-mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: var(--gold-dim);
+        color: var(--gold);
+        padding: 4px 10px;
+        border-radius: 100px;
+        margin-bottom: 20px;
+        align-self: flex-start;
+      }
+
+      /* ── Footer ── */
+      .footer {
+        background: var(--ink);
+        padding: 60px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .footer-brand {
+        font-family: var(--ff-serif);
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .footer-brand em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .footer-text {
+        font-family: var(--ff-mono);
+        font-size: 11px;
+        color: var(--text-inv-dim);
+        letter-spacing: 0.05em;
+      }
+
+      /* ── Animations ── */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .hero-content > * {
+        animation: fadeUp 0.8s ease both;
+      }
+      .hero-content > *:nth-child(2) { animation-delay: 0.1s; }
+      .hero-content > *:nth-child(3) { animation-delay: 0.2s; }
+
+      .card {
+        animation: fadeUp 0.6s ease both;
+      }
+      .card:nth-child(2) { animation-delay: 0.1s; }
+      .card:nth-child(3) { animation-delay: 0.2s; }
+
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .hero { padding: 60px 24px; }
+        .products { padding: 60px 24px; }
+        .footer { padding: 40px 24px; }
+        .stamp { display: none; }
+        .grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <span class="eyebrow">Inteligencia Artificial & Gestao Publica</span>
+        <h1 class="hero-title">INAI<em>Solutions</em></h1>
+        <p class="hero-subtitle">
+          Transformamos dados publicos em inteligencia acionavel.
+          Ferramentas de IA para licitacoes, simulacoes de governo
+          e analise de politicas publicas.
+        </p>
+      </div>
+      <div class="stamp">
+        INAI DIGITAL<br />
+        SOLUTIONS<br />
+        2026
+      </div>
+    </section>
+
+    <section class="products">
+      <p class="section-label">Produtos</p>
+      <h2 class="section-title">Ferramentas para a gestao publica inteligente</h2>
+      <div class="grid">
+        <a class="card" href="/eupresidente/">
+          <span class="card-badge">Novo</span>
+          <div class="card-icon">&#127471;&#127479;</div>
+          <span class="card-tag">Simulador</span>
+          <h3 class="card-title">EuPresidente</h3>
+          <p class="card-desc">
+            Assuma a presidencia do Brasil. Monte seu governo, tome decisoes
+            estrategicas em capitulos tematicos e descubra como voce se compara
+            aos governantes da historia brasileira.
+          </p>
+          <span class="card-link">Jogar agora</span>
+        </a>
+
+        <a class="card" href="/licitacoes/">
+          <div class="card-icon">&#128200;</div>
+          <span class="card-tag">Plataforma</span>
+          <h3 class="card-title">Licitacoes</h3>
+          <p class="card-desc">
+            Monitore, analise e acompanhe licitacoes publicas com inteligencia
+            artificial. Classificacao automatica, alertas e dashboards em tempo real.
+          </p>
+          <span class="card-link">Acessar plataforma</span>
+        </a>
+
+        <a class="card" href="#">
+          <span class="card-badge">Em breve</span>
+          <div class="card-icon">&#128218;</div>
+          <span class="card-tag">Analise</span>
+          <h3 class="card-title">Estudos & Relatorios</h3>
+          <p class="card-desc">
+            Analises aprofundadas sobre orcamento federal, balanca de pagamentos,
+            reforma trabalhista, defesa, diplomacia e mais — baseadas em dados do
+            IPEA, BCB e IBGE.
+          </p>
+          <span class="card-link">Em desenvolvimento</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-brand">INAI<em>Solutions</em></div>
+      <span class="footer-text">&copy; 2026 INAI Solutions. Inteligencia artificial aplicada a gestao publica.</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+.title-screen {
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.03) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.03) 80px);
+  pointer-events: none;
+}
+
+.ts-content {
+  position: relative;
+  max-width: 700px;
+}
+
+.ts-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 32px;
+}
+
+.ts-title {
+  font-family: var(--ff-serif);
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.ts-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.ts-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-inv-muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.ts-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.ts-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ts-meta-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.ts-meta-value {
+  font-size: 14px;
+  color: var(--text-inv-muted);
+}
+
+.ts-start-btn {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.ts-start-btn:hover {
+  background: var(--gold-light);
+}
+
+.ts-footer-note {
+  position: absolute;
+  bottom: -40px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  color: var(--text-inv-dim);
+  letter-spacing: 0.05em;
+}
+
+.ts-stamp {
+  position: absolute;
+  top: 60px;
+  right: 10%;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-inv-dim);
+  text-align: right;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .title-screen { padding: 60px 24px; }
+  .ts-meta { gap: 24px; }
+  .ts-stamp { display: none; }
+}

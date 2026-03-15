@@ -1,0 +1,327 @@
+/* ═══════════════════════════════
+   Setup Screens (Congress + Ministry)
+   ═══════════════════════════════ */
+
+.setup-screen {
+  min-height: 100vh;
+}
+
+.setup-cover {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 80px 10% 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.setup-cover-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px);
+  pointer-events: none;
+}
+
+.setup-cover-content {
+  position: relative;
+  max-width: 640px;
+}
+
+.setup-cover-content h1 {
+  font-size: clamp(32px, 4vw, 56px);
+  margin: 16px 0 24px;
+  line-height: 1.1;
+}
+
+.setup-cover-content h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.setup-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-inv-muted);
+  line-height: 1.7;
+}
+
+.setup-body {
+  padding: 60px 10%;
+  max-width: 1100px;
+}
+
+.setup-section-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.setup-report-btn {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.setup-report-btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.setup-hint {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── Congress Options ── */
+.setup-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.setup-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration) var(--ease);
+  cursor: pointer;
+  font-family: var(--ff-sans);
+  color: var(--text);
+}
+
+.setup-card:hover {
+  border-color: var(--rule-strong);
+}
+
+.setup-card-selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.setup-card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.setup-card-title {
+  font-family: var(--ff-serif);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.setup-card-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.setup-card-detail {
+  margin-bottom: 8px;
+}
+
+.setup-card-footnote {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.setup-card-blocked {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  color: var(--red);
+  line-height: 1.5;
+  margin-top: 8px;
+  padding: 6px 8px;
+  background: rgba(220,50,47,0.06);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid var(--red);
+}
+
+/* ── Ministry Scale ── */
+.ministry-scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.ms-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+  font-family: var(--ff-sans);
+  color: var(--text);
+}
+
+.ms-card:hover { border-color: var(--rule-strong); }
+
+.ms-card-selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+  background: var(--gold-dim);
+}
+
+.ms-num {
+  font-family: var(--ff-serif);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.ms-ref {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.ms-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.ms-eff {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.ms-congress {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+}
+
+.ms-congress.pos { color: var(--green); }
+.ms-congress.neg { color: var(--red); }
+
+/* ── Profile Grid ── */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.profile-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+  font-family: var(--ff-sans);
+  color: var(--text);
+}
+
+.profile-card:hover { border-color: var(--rule-strong); }
+
+.profile-card-selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.profile-title {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.profile-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.profile-stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 4px 8px;
+  background: rgba(10,10,15,0.03);
+  border-radius: var(--radius-sm);
+}
+
+.profile-stat-label {
+  color: var(--text-muted);
+}
+
+.profile-stat-value {
+  font-family: var(--ff-mono);
+  font-weight: 500;
+}
+
+/* ── Confirm ── */
+.setup-confirm {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.setup-confirm-btn {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 16px 48px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.setup-confirm-btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .setup-cover { padding: 60px 24px 40px; }
+  .setup-body { padding: 40px 24px; }
+  .setup-options-grid { grid-template-columns: 1fr; }
+  .ministry-scale { grid-template-columns: repeat(3, 1fr); }
+  .profile-grid { grid-template-columns: 1fr; }
+}

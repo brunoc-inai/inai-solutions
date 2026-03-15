@@ -1,0 +1,238 @@
+.chapter-screen {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.ch-screen-header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 48px 10% 40px;
+  border-bottom: 3px solid;
+}
+
+.ch-screen-header-inner {
+  max-width: 800px;
+}
+
+.ch-screen-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ch-screen-progress {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--text-inv-dim);
+}
+
+.ch-screen-title {
+  font-size: clamp(28px, 3vw, 44px);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.ch-screen-num {
+  font-family: var(--ff-mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.ch-screen-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-inv-muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.ch-screen-body {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  padding: 40px 10%;
+  align-items: start;
+}
+
+.ch-screen-main {
+  max-width: 720px;
+}
+
+.ch-screen-sidebar {
+  position: sticky;
+  top: 24px;
+}
+
+/* ── Context block (beige area) ── */
+.ch-context {
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+
+.ch-context-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.ch-context-title {
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.ch-context-reports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ch-report-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+
+.ch-report-link:hover:not(:disabled) {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.ch-report-link.ch-report-blocked {
+  border-color: var(--text-dim);
+  color: var(--text-dim);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.ch-report-icon {
+  font-size: 12px;
+}
+
+.ch-report-label {
+  white-space: nowrap;
+}
+
+.ch-report-warn {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: auto;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  padding: 6px 10px;
+  white-space: nowrap;
+  z-index: 10;
+  border-radius: 2px;
+}
+
+.ch-report-blocked:hover .ch-report-warn {
+  display: block;
+}
+
+.ch-context-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.ch-context-text:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Report overlay ── */
+.ch-report-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ch-report-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.ch-report-panel {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  overflow: auto;
+  background: var(--paper);
+}
+
+/* ── Advance ── */
+.ch-screen-advance {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.ch-advance-msg {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.ch-advance-btn {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 40px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ch-advance-btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .ch-screen-header { padding: 40px 24px 32px; }
+  .ch-screen-body {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .ch-screen-sidebar {
+    position: static;
+    order: -1;
+  }
+  .ch-context-header {
+    flex-direction: column;
+  }
+}

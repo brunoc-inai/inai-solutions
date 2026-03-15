@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/licitacoes/:path*",
+      "destination": "https://inai-licita-es.vercel.app/licitacoes/:path*"
+    },
+    {
+      "source": "/eupresidente/:path*",
+      "destination": "/eupresidente/index.html"
+    }
+  ]
+}

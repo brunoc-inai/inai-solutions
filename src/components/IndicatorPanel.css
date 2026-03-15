@@ -1,0 +1,148 @@
+.indicator-panel {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ip-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.ip-phase {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.ip-item {
+  padding: 8px 0;
+}
+
+.ip-item.ip-danger {
+  background: var(--red-dim);
+  margin: 0 -12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+}
+
+.ip-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ip-icon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+}
+
+.ip-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.ip-value {
+  font-family: var(--ff-serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ip-bar {
+  height: 4px;
+  background: var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ip-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.ip-warning {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  color: var(--red);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* Fiscal crisis alert banner */
+.ip-fiscal-alert {
+  background: var(--red-dim, rgba(220, 50, 50, 0.12));
+  border: 2px solid var(--red);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  animation: ip-fiscal-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ip-fiscal-pulse {
+  0%, 100% { border-color: var(--red); box-shadow: 0 0 0 0 rgba(220, 50, 50, 0); }
+  50% { border-color: var(--red); box-shadow: 0 0 12px 2px rgba(220, 50, 50, 0.3); }
+}
+
+.ip-fiscal-alert-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ip-fiscal-alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ip-fiscal-alert-title {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--red);
+}
+
+.ip-fiscal-alert-text {
+  font-size: 11px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.ip-fiscal-alert-counter {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  color: var(--red);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* Fiscal crisis indicator highlight */
+.ip-item.ip-fiscal-crisis {
+  background: var(--red-dim, rgba(220, 50, 50, 0.12));
+  margin: 0 -12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--red);
+}

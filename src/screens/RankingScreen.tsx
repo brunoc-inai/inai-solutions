@@ -443,6 +443,16 @@ export default function RankingScreen() {
             Jogar novamente
           </button>
         </div>
+
+        {/* CTA INAI Digital */}
+        <div className="rk-cta-inai">
+          <a href="https://www.inai.digital/" target="_blank" rel="noopener" className="rk-cta-link">
+            <span className="rk-cta-eyebrow">Gostou do simulador?</span>
+            <span className="rk-cta-title">Conheça o INAI<em>Digital</em></span>
+            <span className="rk-cta-desc">Nossa plataforma de IA para gestão pública — o produto por trás deste simulador.</span>
+            <span className="rk-cta-action">Visitar inai.digital →</span>
+          </a>
+        </div>
       </div>
 
       {/* Performance report overlay */}

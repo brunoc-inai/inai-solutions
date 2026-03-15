@@ -123,6 +123,12 @@
   text-align: right;
   line-height: 1.8;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ts-stamp:hover {
+  color: var(--gold);
 }
 
 @media (max-width: 768px) {

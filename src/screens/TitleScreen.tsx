@@ -85,11 +85,11 @@ export default function TitleScreen() {
         </motion.div>
       </div>
 
-      <div className="ts-stamp">
+      <a className="ts-stamp" href="https://www.inai.digital/" target="_blank" rel="noopener">
         INAI DIGITAL<br />
         SIMULADOR v1.0<br />
         2026
-      </div>
+      </a>
     </div>
   );
 }

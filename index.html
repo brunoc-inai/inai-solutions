@@ -271,6 +271,62 @@
         letter-spacing: 0.05em;
       }
 
+      /* ── CTA ── */
+      .cta {
+        background: var(--ink-soft);
+        padding: 100px 10%;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .cta-title {
+        font-family: var(--ff-serif);
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .cta-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .cta-desc {
+        font-size: 16px;
+        color: var(--text-inv-muted);
+        line-height: 1.7;
+        margin-bottom: 32px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        font-family: var(--ff-mono);
+        font-size: 13px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 16px 40px;
+        background: var(--gold);
+        color: var(--ink);
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.2s ease;
+      }
+
+      .cta-btn:hover {
+        background: var(--gold-light);
+      }
+
+      .footer-brand {
+        text-decoration: none;
+        color: inherit;
+      }
+
       /* ── Animations ── */
       @keyframes fadeUp {
         from { opacity: 0; transform: translateY(24px); }
@@ -361,8 +417,22 @@
       </div>
     </section>
 
+    <section class="cta">
+      <div class="cta-content">
+        <span class="eyebrow">Produto Principal</span>
+        <h2 class="cta-title">Conhe&ccedil;a o INAI<em>Digital</em></h2>
+        <p class="cta-desc">
+          Nossa plataforma completa de inteligencia artificial para gestao publica.
+          Automatize processos, analise dados e tome decisoes baseadas em evidencias.
+        </p>
+        <a class="cta-btn" href="https://www.inai.digital/" target="_blank" rel="noopener">
+          Conhecer o INAI Digital &rarr;
+        </a>
+      </div>
+    </section>
+
     <footer class="footer">
-      <div class="footer-brand">INAI<em>Solutions</em></div>
+      <a class="footer-brand" href="https://www.inai.digital/" target="_blank" rel="noopener">INAI<em>Digital</em></a>
       <span class="footer-text">&copy; 2026 INAI Solutions. Inteligencia artificial aplicada a gestao publica.</span>
     </footer>
   </body>

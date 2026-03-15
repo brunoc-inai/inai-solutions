@@ -116,14 +116,6 @@ export default function MinisterConsult() {
             <span>📖</span>
             <span className="mc-tool-btn-label">Manual</span>
           </button>
-          <button className="mc-tool-btn mc-tool-btn-admin" onClick={() => handleOpenTool('admin-ref')} title="Referência ADM">
-            <span>🔧</span>
-            <span className="mc-tool-btn-label">ADM</span>
-          </button>
-          <button className="mc-tool-btn mc-tool-btn-admin" onClick={() => handleOpenTool('monte-carlo')} title="Simulação Monte Carlo">
-            <span>🎲</span>
-            <span className="mc-tool-btn-label">SIM</span>
-          </button>
         </div>
       </div>
 

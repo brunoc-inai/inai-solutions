@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://inai.digital",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/licitacoes",
